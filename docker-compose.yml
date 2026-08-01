@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  # DevsBin Web Application & API Service
+  web:
+    build: .
+    container_name: devsbin_app
+    ports:
+      - "3000:3000"
+    environment:
+      - PORT=3000
+      - DATABASE_URL=mongodb://mongo:27017/devsbin
+      - NODE_ENV=production
+    depends_on:
+      - mongo
+    restart: always
+
+  # Persistent Database Service
+  mongo:
+    image: mongo:latest
+    container_name: devsbin_db
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+    restart: always
+
+volumes:
+  mongo_data:

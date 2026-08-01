@@ -1,0 +1,63 @@
+@import "tailwindcss";
+
+/* Theme Variable Definitions */
+:root, [data-theme="obsidian"] {
+  --bg-main: #0B0F17;
+  --bg-card: #111827;
+  --bg-input: #0B0F17;
+  --accent-primary: #F59E0B;
+  --accent-hover: #D97706;
+  --text-accent: #F59E0B;
+  --border-subtle: rgba(245, 158, 11, 0.2);
+}
+
+[data-theme="cyberpunk"] {
+  --bg-main: #0D0221;
+  --bg-card: #190B38;
+  --bg-input: #0D0221;
+  --accent-primary: #FF007F;
+  --accent-hover: #E0006C;
+  --text-accent: #FF007F;
+  --border-subtle: rgba(255, 0, 127, 0.3);
+}
+
+[data-theme="emerald"] {
+  --bg-main: #021C12;
+  --bg-card: #062C1E;
+  --bg-input: #021C12;
+  --accent-primary: #10B981;
+  --accent-hover: #059669;
+  --text-accent: #34D399;
+  --border-subtle: rgba(16, 185, 129, 0.3);
+}
+
+/* Dynamic Classes */
+.theme-bg-main {
+  background-color: var(--bg-main) !important;
+}
+
+.theme-bg-card {
+  background-color: var(--bg-card) !important;
+}
+
+.theme-bg-input {
+  background-color: var(--bg-input) !important;
+}
+
+.theme-border {
+  border-color: var(--border-subtle) !important;
+}
+
+.theme-text-accent {
+  color: var(--text-accent) !important;
+}
+
+.theme-btn-accent {
+  background-color: var(--accent-primary) !important;
+  color: #000000 !important;
+}
+
+body {
+  background-color: var(--bg-main);
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
